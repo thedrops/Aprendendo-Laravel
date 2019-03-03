@@ -1,14 +1,10 @@
-<!DOCTYPE html> 
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Detalhes de Produto</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script>
-</head>
-<body>
-    
-</body>
-</html>
+@extends('principal')
+@section('conteudo')
+    <h1>Detalhes do Produto</h1>
+    <ul>
+        <li><p>Nome: {{$p->nome}}</p></li>
+        <li><p>Valor: {{$p->valor}}</p></li>
+        <li><p>Descrição: {{$p->descricao or 'nenhuma descricao informada'}}</p></li>
+        <li><p>Quantidade em estoque: {{$p->quantidade}}</p></li>
+    </ul>
+@stop
