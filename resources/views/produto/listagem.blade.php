@@ -1,4 +1,4 @@
-@extends('principal')
+@extends('layout/principal')
 @section('conteudo')
 
     @if(empty($produtos))
@@ -18,10 +18,23 @@
                 <td>
                 <a href="/produtos/mostra/{{$p->id}}"><i class="material-icons">search</i></a>
                 </td>
+                <td>
+                <a href="{{action('ProdutoController@remove',$p->id)}}"><i class="material-icons">delete</i></a>
+                </td>
+                <td>
+                <a href="{{action('ProdutoController@busca',$p->id)}}"><i class="material-icons">edit</i></a>
+                </td>  
             </tr>
                 @endforeach
                 
             </table>
     @endif
+
+    @if(old('nome'))
+    <div class="alert alert-success">
+        <strong>Sucesso!</strong> O produto {{old('nome')}} foi adicionado.
+    </div>
+    @endif
+
 
 @stop
